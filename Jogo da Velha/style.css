@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #eeeff1;
+  --color-text: #000;
+  --color-box: #D3D3CF;
+  --color-X: #0652a3;
+  --color-O: #a30606;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--color-text);
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.object_to_play {
+  width: 200px;
+  height: 200px;
+  background-color: var(--color-box);
+  border: solid 1px var(--color-text);
+  display: inline-block;
+  position: relative;
+}
+
+.linha1,
+.linha2,
+.linha3 {
+  text-align: center;
+}
+
+.container_content {
+  margin-top: 2rem;
+}
+
+.O::after {
+  content: "";
+  border: solid 8px var(--color-O);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.X::after {
+  content: "X";
+  font-size: 11rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-X);
+}
+
+.hidden_symbols {
+  display: none;;
+}
+
+.player_time {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-top: 1.4rem;
+  font-size: 2.6rem;
+}
+
+/* MODAL RESET GAME */
+
+.container_finished {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+  display: none;
+}
+
+.finished_game {
+  width: 420px;
+  height: 380px;
+  background-color: var(--color-text);
+  position: absolute;
+  border-radius: 1rem;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.winner_response {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 5.5rem;
+}
+
+.btn_reset {
+  position: relative;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  padding: 0.8rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.show_modal {
+  display: block;
+}
